@@ -1,0 +1,24 @@
+# site gerado pelo build.sh
+dist/
+
+# intermediários da coleta (recriados pelo build.sh)
+coleta/dados/gerados/
+
+# dados pessoais dos candidatos vindos da API do TSE (CPF, título, e-mails, bens)
+coleta/dados/privado/
+
+# versões antigas do deck
+apresentacao/versoes-antigas/
+
+# arquivos de trabalho do editor de design e do wrangler
+.thumbnail
+_ds/
+.wrangler/
+
+# sistema e editores
+.DS_Store
+__pycache__/
+*.pyc
+.~lock.*#
+*.log
+*.err

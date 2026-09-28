@@ -1,0 +1,22 @@
+{
+ "_criterio": "Só entra trecho que traz de fato uma proposta (medida defendida), um compromisso (apoio ou ação assumida), uma crítica (a adversário, governo ou instituição) ou uma proposta de fiscalização (pedido de apuração). Citações literais. Posts de agenda, mobilização e pedido de voto ficam sem classificação. Mesmo critério para todos os candidatos.",
+ "jones": [
+  ["Propostas", "Defendemos um Plano Nacional de Ciência, Tecnologia e Soberania Digital, investimento na cadeia produtiva tecnológica brasileira, criação da Terrabras para garantir controle nacional sobre minerais estratégicos e uma Incubadora de Tecnologia Social e Aplicativos Públicos para enfrentar o monopólio das Big Techs."],
+  ["Propostas", "Precisamos derrotar o Novo Teto de Gastos e as políticas de austeridade para garantir recursos permanentes para ciência, tecnologia e desenvolvimento nacional."],
+  ["Propostas", "a importância da inclusão de Pernambuco no Plano Nacional de Ferrovias de Passageiros"],
+  ["Propostas", "por um transporte no Brasil 100% público, de qualidade e gratuito"],
+  ["Compromissos", "Todo apoio aos trabalhadores e trabalhadoras da Caixa!"],
+  ["Críticas", "Direitos não podem ser tratados como moeda de troca para encerrar uma greve! Enquanto isso, a Caixa segue lucrando bilhões."],
+  ["Críticas", "grandes empresas privadas de transporte, que lucram cada vez mais com o sangue do nosso povo, cobrando passagens cada vez mais caras e não oferecendo um serviço de qualidade"],
+  ["Críticas", "O nosso vídeo permanece no ar para ilustrar a postura constrangedora de Daniel Coelho, que não consegue defender a sua aliada, pior prefeita da história de Olinda junto com Lupércio, e sai correndo ao ser confrontado pela população."],
+  ["Críticas", "Precisamos enterrar a candidatura de Flávio Bolsonaro e fortalecer uma bancada forte da esquerda radical no Congresso Nacional para enfrentar todos os ataques e ameaças da extrema direita."],
+  ["Propostas de fiscalização", "É preciso apurar com rigor as denúncias de parcialidade no julgamento feitas pela defesa de Zé Maria, investigar as possíveis distorções de suas declarações e as eventuais violações ao devido processo legal."]
+ ],
+ "nikolas": [
+  ["Propostas", "Aprovamos redução da maioridade penal na CCJ"],
+  ["Propostas", "Aprovamos o Fim das Saidinhas"],
+  ["Críticas", "E agora a PGR, a mais alta instância do Ministério Público do nosso país, mentiu na sessão do STF"],
+  ["Críticas", "Não é um que tem que cair, não. Tem que cair é de penca, porque não tem condições esses caras estarem representando a justiça do nosso Brasil."],
+  ["Críticas", "É o gás final pra tirar o PT."]
+ ]
+}

@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#E9ECEE;font-family:Roboto,Arial,sans-serif;color:#333;-webkit-font-smoothing:antialiased}
+a{color:#2F6B6E;text-decoration:none}
+a:hover{color:#1F4C4E;text-decoration:underline}
+*{box-sizing:border-box}
+</style>
+</helmet>
+
+<div style="min-height:100vh;padding:{{ outerPad }};padding-bottom:96px">
+<div ref="{{ frameRef }}" style="max-width:{{ frameMaxW }};height:{{ frameH }};overflow-y:{{ frameOverflow }};margin:0 auto;border:{{ frameBorder }};border-radius:{{ frameRadius }};background:#F2F4F5;box-shadow:{{ frameShadow }};position:relative">
+
+<div style="position:sticky;top:0;z-index:30;background:#F6F2E4;color:#5A5238;border-bottom:1px solid #E2D9BA;font-size:12px;line-height:1.4;padding:6px 16px;text-align:center">Protótipo de hackathon — conteúdos, promessas e transcrições são ilustrativos. Não é um sistema oficial do TSE.</div>
+
+<header style="background:#2F6B6E;color:#fff;display:flex;align-items:center;gap:16px;padding:14px 24px;flex-wrap:wrap">
+  <div style="display:flex;align-items:center;gap:10px;flex:1 1 auto;min-width:0;flex-wrap:wrap">
+    <span style="font-size:19px;font-weight:500">Divulgação de Candidaturas e Contas Eleitorais</span>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 20h4L19 9l-4-4L4 16v4z"></path><path d="M14 6l4 4"></path></svg>
+    <span style="font-size:14px;color:#CFE0E0">Eleição Geral Federal 2026</span>
+  </div>
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</header>
+
+<main style="max-width:1280px;margin:0 auto;padding:14px 20px 40px">
+  <nav style="display:flex;justify-content:flex-end;flex-wrap:wrap;gap:6px;font-size:13px;color:#2F8F5B;margin-bottom:14px">
+    <a href="#" style="color:#2F8F5B">Página Inicial</a><span>/</span><a href="#" style="color:#2F8F5B">Regiões Brasileiras</a><span>/</span><a href="#" style="color:#2F8F5B">Lista Candidatos</a><span>/</span><span style="color:#555">Candidato</span>
+  </nav>
+
+  <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start">
+    <aside style="flex:1 1 260px;max-width:{{ leftMax }};display:flex;flex-direction:column;gap:12px">
+      <div style="background:#fff;border-radius:4px;box-shadow:0 1px 3px rgba(0,0,0,.12);padding:20px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px">
+        <div style="width:168px;aspect-ratio:3/4;position:relative;border-radius:3px;overflow:hidden;background:repeating-linear-gradient(135deg,#E4E8EA 0 10px,#DADFE2 10px 20px);display:flex;align-items:center;justify-content:center;margin-bottom:10px">
+          <span style="font-family:'Roboto Mono',monospace;font-size:11px;color:#6B7479">foto 3x4</span>
+          <div style="position:absolute;left:0;right:0;bottom:0;background:#A9D3EE;color:#1B4A66;font-size:13px;font-weight:500;padding:5px 0">Concorrendo</div>
+        </div>
+        <div style="font-size:18px;font-weight:700;color:#222;letter-spacing:.3px">JONES MANOEL</div>
+        <div style="font-size:13px;color:#444;margin-top:6px">CPF: ***.100.294-**</div>
+        <div style="font-size:13px;color:#444">Deputado Federal - Pernambuco/PE</div>
+        <div style="font-size:13px;color:#444">Partido Socialismo E Liberdade - PSOL</div>
+        <div style="font-size:13px;color:#444">68.571.443/0001-76</div>
+        <div style="font-size:34px;font-weight:700;color:#222;margin-top:4px">5050</div>
+      </div>
+      <sc-for list="{{ statusBoxes }}" as="s" hint-placeholder-count="3">
+        <div style="background:#2F6B6E;color:#fff;border-radius:4px;padding:12px 16px;box-shadow:0 1px 3px rgba(0,0,0,.12)">
+          <div style="display:flex;align-items:center;gap:8px;font-weight:700;font-size:16px">{{ s.title }}
+            <span style="width:16px;height:16px;border-radius:50%;border:1.5px solid #fff;font-size:10px;display:inline-flex;align-items:center;justify-content:center;font-weight:700">?</span>
+          </div>
+          <div style="font-size:13px;color:#D3E4E4;margin-top:2px">{{ s.sub }}</div>
+        </div>
+      </sc-for>
+    </aside>
+
+    <section style="flex:1 1 560px;min-width:0;display:flex;flex-direction:column;gap:10px">
+      <div style="background:#fff;border-radius:4px;box-shadow:0 1px 3px rgba(0,0,0,.12);padding:18px 22px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;border-bottom:1px solid #DDE2E5;padding-bottom:10px;margin-bottom:14px">
+          <span style="font-size:20px;font-weight:500;color:#2F6B6E">Titular</span>
+          <span style="font-size:12px;color:#666">Última Atualização: 18/09/2026 14:39</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px 28px;font-size:14px">
+          <sc-for list="{{ fields }}" as="f" hint-placeholder-count="12">
+            <div style="grid-column:{{ f.span }};display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center">
+              <span style="font-weight:700;color:#333;flex:none">{{ f.label }}:</span>
+              <sc-if value="{{ f.help }}" hint-placeholder-val="{{ false }}"><span style="width:15px;height:15px;border-radius:50%;background:#E8892B;color:#fff;font-size:10px;font-weight:700;display:inline-flex;align-items:center;justify-content:center">?</span></sc-if>
+              <span style="color:#444">{{ f.value }}</span>
+            </div>
+          </sc-for>
+          <div style="grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+            <span style="font-weight:700">Limite Legal de Gastos 1º Turno:</span>
+            <span style="background:#555B5F;color:#fff;font-weight:700;border-radius:14px;padding:4px 14px;font-size:14px">R$ 3.176.572,53</span>
+          </div>
+        </div>
+      </div>
+
+      <sc-for list="{{ blocksBefore }}" as="b" hint-placeholder-count="4">
+        <div style="background:#E8ECEE;border:1px solid #DCE1E4;border-radius:4px;padding:13px 18px;display:flex;align-items:center;gap:12px;cursor:pointer" style-hover="background:#E1E6E9">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F6B6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="{{ b.icon }}"></path></svg>
+          <span style="flex:1;color:#2F6B6E;font-weight:500;font-size:15px">{{ b.title }}</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2F6B6E" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
+        </div>
+      </sc-for>
+
+      <div ref="{{ blockRef }}" style="background:#E8ECEE;border:1px solid #DCE1E4;border-radius:4px;overflow:hidden">
+        <div onClick="{{ toggleOpen }}" style="padding:13px 18px;display:flex;align-items:center;gap:12px;cursor:pointer" style-hover="background:#E1E6E9">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F6B6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10M19 21V10M9.5 21V10M14.5 21V10M2 10l10-6 10 6z"></path></svg>
+          <span style="flex:1;display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="color:#2F6B6E;font-weight:500;font-size:15px">Memória da Campanha</span><span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#2F6B6E;border:1px solid #2F6B6E;border-radius:10px;padding:1px 7px">novo</span></span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2F6B6E" stroke-width="2" style="transform:{{ chevronRot }};transition:transform .2s"><path d="M6 9l6 6 6-6"></path></svg>
+        </div>
+
+        <sc-if value="{{ open }}" hint-placeholder-val="{{ false }}">
+          <div style="background:#fff;border-top:1px solid #DCE1E4">
+            <div style="display:flex;border-bottom:1px solid #DDE2E5;padding:0 16px;flex-wrap:wrap">
+              <sc-for list="{{ tabs }}" as="tb" hint-placeholder-count="2">
+                <button onClick="{{ tb.go }}" style="background:none;border:0;border-bottom:3px solid {{ tb.line }};margin-bottom:-1px;padding:13px 12px 10px;font:inherit;font-size:14px;font-weight:500;color:{{ tb.fg }};cursor:pointer;display:flex;align-items:center;gap:8px">{{ tb.label }}
+                  <sc-if value="{{ tb.future }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;font-weight:500;color:#5F6A70;background:#EEF1F2;border-radius:3px;padding:1px 6px">visão futura</span></sc-if>
+                </button>
+              </sc-for>
+            </div>
+
+            <sc-if value="{{ tabAcervo }}" hint-placeholder-val="{{ true }}">
+            <div style="padding:20px 22px;display:flex;flex-direction:column;gap:28px">
+              <p style="margin:0;font-size:13px;line-height:1.55;color:#555;text-wrap:pretty">Acervo público e permanente do que o candidato disse nas redes sociais, no horário eleitoral de TV e rádio e em debates. Cada item é registrado com hash criptográfico (CID/IPFS), assinatura e carimbo do tempo, transcrito e organizado por tema e promessa. Última coleta: 24/09/2026, 14:00.</p>
+
+              <div>
+                <div style="font-size:13px;font-weight:700;color:#2F6B6E;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px">Resumo do acervo</div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(108px,1fr));gap:8px">
+                  <sc-for list="{{ stats }}" as="st" hint-placeholder-count="7">
+                    <div style="border:1px solid #DDE2E5;border-radius:4px;padding:12px 12px 10px;background:#FAFBFB">
+                      <div style="font-size:26px;font-weight:700;color:#2F6B6E;line-height:1">{{ st.n }}</div>
+                      <div style="font-size:12px;color:#555;margin-top:6px;line-height:1.3">{{ st.label }}</div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+
+              <div style="border:1px solid #DDE2E5;border-radius:4px;padding:16px;background:#F7F9F9;display:flex;flex-direction:column;gap:12px">
+                <div style="position:relative">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B757A" stroke-width="2" style="position:absolute;left:12px;top:11px"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>
+                  <input value="{{ search }}" onChange="{{ onSearch }}" placeholder="Buscar no que o candidato disse" style="width:100%;height:40px;border:1px solid #C5CDD1;border-radius:4px;padding:0 12px 0 38px;font:inherit;font-size:14px;background:#fff;color:#333" />
+                </div>
+                <div style="display:flex;gap:8px 12px;flex-wrap:wrap;align-items:center">
+                  <span style="font-size:12px;font-weight:700;color:#555;width:44px">Mídia</span>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap">
+                    <sc-for list="{{ mediaOpts }}" as="mo" hint-placeholder-count="5">
+                      <button onClick="{{ mo.go }}" style="border:1px solid {{ mo.bd }};border-radius:4px;padding:5px 12px;font:inherit;font-size:13px;cursor:pointer;background:{{ mo.bg }};color:{{ mo.fg }}">{{ mo.label }}</button>
+                    </sc-for>
+                  </div>
+                </div>
+                <div style="display:flex;gap:8px 12px;flex-wrap:wrap;align-items:center">
+                  <span style="font-size:12px;font-weight:700;color:#555;width:44px">Tema</span>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap">
+                    <sc-for list="{{ themeChips }}" as="tc" hint-placeholder-count="6">
+                      <button onClick="{{ tc.go }}" style="border:1px solid {{ tc.bd }};background:{{ tc.bg }};color:{{ tc.fg }};border-radius:14px;padding:4px 12px;font:inherit;font-size:12px;cursor:pointer">{{ tc.label }}</button>
+                    </sc-for>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:12px">
+                  <div style="font-size:13px;font-weight:700;color:#2F6B6E;text-transform:uppercase;letter-spacing:.5px">Promessas por tema</div>
+                  <span style="font-size:12px;color:#666">{{ promiseCount }}</span>
+                </div>
+                <sc-if value="{{ noPromises }}" hint-placeholder-val="{{ false }}">
+                  <div style="font-size:13px;color:#666;border:1px dashed #CFD6DA;border-radius:4px;padding:14px">Nenhuma promessa corresponde aos filtros selecionados.</div>
+                </sc-if>
+                <div style="display:flex;flex-direction:column;gap:18px">
+                  <sc-for list="{{ groups }}" as="g" hint-placeholder-count="3">
+                    <div>
+                      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+                        <span style="font-size:15px;font-weight:500;color:#1F3F40">{{ g.theme }}</span>
+                        <span style="font-size:12px;color:#777">{{ g.count }}</span>
+                        <span style="flex:1;height:1px;background:#E3E7E9"></span>
+                      </div>
+                      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px">
+                        <sc-for list="{{ g.items }}" as="p" hint-placeholder-count="2">
+                          <div style="border:1px solid #DDE2E5;border-radius:4px;padding:12px 14px;background:#fff;display:flex;flex-direction:column;gap:10px">
+                            <div style="font-size:14px;color:#3A4447;line-height:1.45;font-style:italic">{{ p.text }}</div>
+                            <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:#555">
+                              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2F6B6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="{{ p.icon }}"></path></svg>
+                              <span>{{ p.source }}</span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+                              <span style="font-size:11px;border-radius:3px;padding:2px 7px;border:1px solid {{ p.planBd }};background:{{ p.planBg }};color:{{ p.planFg }}">{{ p.plan }}</span>
+                              <button onClick="{{ p.open }}" style="border:1px solid #2F6B6E;background:#fff;color:#2F6B6E;border-radius:4px;padding:5px 10px;font:inherit;font-size:12px;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:6px" style-hover="background:#EEF5F5"><svg width="12" height="12" viewBox="0 0 24 24" fill="#2F6B6E"><path d="M7 4l13 8-13 8z"></path></svg>Ver no original</button>
+                            </div>
+                          </div>
+                        </sc-for>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+
+              <div>
+                <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:12px">
+                  <div style="font-size:13px;font-weight:700;color:#2F6B6E;text-transform:uppercase;letter-spacing:.5px">Linha do tempo</div>
+                  <span style="font-size:12px;color:#666">{{ timelineCount }}</span>
+                </div>
+                <div style="position:relative;padding-left:22px">
+                  <div style="position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:#DDE2E5"></div>
+                  <div style="display:flex;flex-direction:column;gap:12px">
+                    <sc-for list="{{ items }}" as="it" hint-placeholder-count="4">
+                      <div style="position:relative">
+                        <div style="position:absolute;left:-21px;top:16px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid #2F6B6E"></div>
+                        <div style="border:1px solid #DDE2E5;border-radius:4px;padding:12px 14px;background:#fff;display:flex;gap:14px;flex-wrap:wrap">
+                          <div style="flex:none;width:84px;height:84px;border-radius:3px;background:{{ it.thumbBg }};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-family:'Roboto Mono',monospace;font-size:10px;color:{{ it.thumbFg }}">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="{{ it.icon }}"></path></svg>
+                            <span>{{ it.kind }}</span>
+                          </div>
+                          <div style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:6px">
+                            <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:#666;flex-wrap:wrap">
+                              <span style="font-weight:500;color:#333">{{ it.origin }}</span><span>·</span><span>{{ it.date }}, {{ it.time }}</span>
+                            </div>
+                            <div style="font-size:15px;color:#222;line-height:1.4;text-wrap:pretty;font-style:{{ it.fstyle }}">{{ it.text }}</div>
+                            <div style="display:flex;gap:6px;flex-wrap:wrap;font-size:11px">
+                              <sc-for list="{{ it.badges }}" as="bd" hint-placeholder-count="1">
+                                <span style="border:1px solid {{ bd.bd }};background:{{ bd.bg }};color:{{ bd.fg }};border-radius:3px;padding:1px 6px">{{ bd.label }}</span>
+                              </sc-for>
+                            </div>
+                            <sc-if value="{{ it.boosted }}" hint-placeholder-val="{{ false }}">
+                              <div style="font-size:12px;color:#4E6263;background:#F4F7F7;border-radius:3px;padding:6px 8px;line-height:1.5">Contratante: CNPJ 00.000.000/0001-00 (ilustrativo) · legitimado ✓ · exibe 'Propaganda Eleitoral' ✓</div>
+                            </sc-if>
+                            <a href="#" onClick="{{ it.open }}" style="align-self:flex-start;font-size:13px;font-weight:500">Ver registro</a>
+                          </div>
+                        </div>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+                <div style="display:flex;justify-content:flex-end;margin-top:12px">
+                  <button style="border:1px solid #2F6B6E;background:#fff;color:#2F6B6E;border-radius:4px;padding:7px 16px;font:inherit;font-size:13px;font-weight:500;cursor:pointer">Carregar mais</button>
+                </div>
+              </div>
+
+              <div ref="{{ verifierRef }}" style="border:1px solid #DDE2E5;border-radius:4px;padding:16px;background:#F7F9F9">
+                <div style="font-size:15px;font-weight:500;color:#2F6B6E">Viu um conteúdo atribuído ao candidato? Verifique no acervo</div>
+                <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+                  <input value="{{ query }}" onChange="{{ onQuery }}" placeholder="Cole uma URL ou texto" style="flex:1 1 240px;min-width:0;height:40px;border:1px solid #C5CDD1;border-radius:4px;padding:0 12px;font:inherit;font-size:14px;background:#fff;color:#333" />
+                  <button onClick="{{ uploadDemo }}" style="height:40px;padding:0 14px;border:1px solid #C5CDD1;border-radius:4px;background:#fff;color:#2F6B6E;font:inherit;font-size:13px;cursor:pointer;display:flex;align-items:center;gap:6px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2F6B6E" stroke-width="1.8"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"></path></svg>Imagem ou áudio</button>
+                  <button onClick="{{ verify }}" style="height:40px;padding:0 22px;border:0;border-radius:4px;background:#2F6B6E;color:#fff;font:inherit;font-weight:500;font-size:14px;cursor:pointer" style-hover="background:#265759">Verificar</button>
+                </div>
+                <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:10px;font-size:12px;color:#666">
+                  <span>Exemplos:</span>
+                  <sc-for list="{{ examples }}" as="ex" hint-placeholder-count="3">
+                    <button onClick="{{ ex.pick }}" style="border:1px solid #CBD3D7;background:#fff;border-radius:12px;padding:3px 10px;font:inherit;font-size:12px;color:#2F6B6E;cursor:pointer">{{ ex.label }}</button>
+                  </sc-for>
+                </div>
+
+                <sc-if value="{{ isExact }}" hint-placeholder-val="{{ false }}">
+                  <div style="margin-top:16px;background:#EAF3F3;border:1px solid #BCD7D8;border-radius:4px;padding:16px;display:flex;gap:14px;align-items:flex-start">
+                    <span style="flex:none;width:28px;height:28px;border-radius:50%;background:#2F6B6E;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6"><path d="M5 12l5 5 9-10"></path></svg></span>
+                    <div style="flex:1;min-width:0">
+                      <div style="font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#2F6B6E">Correspondência exata</div>
+                      <div style="font-size:16px;font-weight:500;color:#1F3F40;margin-top:3px">Idêntico ao conteúdo publicado em 03/09/2026 no Instagram oficial</div>
+                      <div style="font-size:12px;color:#4E6263;margin-top:6px;font-family:'Roboto Mono',monospace;word-break:break-all">CID coincidente: bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi</div>
+                      <a href="#" onClick="{{ openPost0309 }}" style="display:inline-block;margin-top:10px;font-size:13px;font-weight:500">Ver registro →</a>
+                    </div>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ isApprox }}" hint-placeholder-val="{{ false }}">
+                  <div style="margin-top:16px;background:#F6F4EE;border:1px solid #DED7C3;border-radius:4px;padding:16px">
+                    <div style="display:flex;gap:14px;align-items:flex-start">
+                      <span style="flex:none;width:28px;height:28px;border-radius:50%;background:#6E6650;color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center">≈</span>
+                      <div style="flex:1;min-width:0">
+                        <div style="font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#6E6650">Correspondência aproximada</div>
+                        <div style="font-size:16px;font-weight:500;color:#3C3727;margin-top:3px">Semelhante (94%) a conteúdo do acervo</div>
+                        <div style="font-size:13px;color:#5E584A;margin-top:4px">Item mais próximo: publicação de 03/09/2026 no Instagram oficial. As diferenças estão destacadas.</div>
+                      </div>
+                    </div>
+                    <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:14px">
+                      <div style="flex:1 1 200px;min-width:0">
+                        <div style="font-size:12px;font-weight:700;color:#444;margin-bottom:6px">Original do acervo · 03/09/2026</div>
+                        <div style="aspect-ratio:4/5;background:#DCE8E8;border:1px solid #C7D6D6;border-radius:4px;padding:18px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px">
+                          <div style="font-size:11px;letter-spacing:1px;color:#2F6B6E;font-weight:700">PLENÁRIA ABERTA</div>
+                          <div style="font-size:20px;font-weight:700;color:#1F3F40;line-height:1.15">Transporte público</div>
+                          <div style="align-self:flex-start;font-size:14px;font-weight:500;color:#1F3F40;outline:1.5px dashed #8A7A3C;outline-offset:2px;padding:1px 3px">Sexta, 05/09 · 19h</div>
+                          <div style="font-size:12px;color:#4E6263">Local ilustrativo · Recife</div>
+                        </div>
+                      </div>
+                      <div style="flex:1 1 200px;min-width:0">
+                        <div style="font-size:12px;font-weight:700;color:#444;margin-bottom:6px">Conteúdo enviado · print</div>
+                        <div style="aspect-ratio:4/5;background:#DCE8E8;border:1px solid #C7D6D6;border-radius:4px;padding:18px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px">
+                          <div style="font-size:11px;letter-spacing:1px;color:#2F6B6E;font-weight:700">PLENÁRIA ABERTA</div>
+                          <div style="font-size:20px;font-weight:700;color:#1F3F40;line-height:1.15">Transporte público</div>
+                          <div style="align-self:flex-start;font-size:14px;font-weight:500;color:#3C3727;background:#FBE7A6;outline:1.5px solid #B8962E;outline-offset:2px;padding:1px 3px">Sábado, 06/09 · 19h</div>
+                          <div style="font-size:12px;color:#4E6263">Local ilustrativo · Recife</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div style="margin-top:12px;background:#fff;border:1px solid #E4DECB;border-radius:4px;padding:12px 14px;font-size:13px;color:#444">
+                      <strong style="color:#3C3727">Diferença detectada</strong> · Data do evento: <span style="text-decoration:line-through;color:#777">Sexta, 05/09</span> → <span style="background:#FBE7A6;padding:0 3px">Sábado, 06/09</span>
+                    </div>
+                    <a href="#" onClick="{{ openPost0309 }}" style="display:inline-block;margin-top:10px;font-size:13px;font-weight:500">Ver registro do original →</a>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ isNone }}" hint-placeholder-val="{{ false }}">
+                  <div style="margin-top:16px;background:#F1F3F4;border:1px solid #D3D9DC;border-radius:4px;padding:16px">
+                    <div style="display:flex;gap:14px;align-items:flex-start">
+                      <span style="flex:none;width:28px;height:28px;border-radius:50%;background:#5F6A70;color:#fff;font-weight:700;font-size:15px;font-family:Georgia,serif;display:flex;align-items:center;justify-content:center">i</span>
+                      <div style="flex:1;min-width:0">
+                        <div style="font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#5F6A70">Sem correspondência</div>
+                        <div style="font-size:16px;font-weight:500;color:#2E3538;margin-top:3px">Não encontrado no acervo até a última coleta (24/09/2026, 14:00)</div>
+                      </div>
+                    </div>
+                    <div style="margin-top:14px;background:#fff;border:1px solid #C9D1D5;border-radius:4px;padding:14px 16px;font-size:14px;line-height:1.5;color:#333">
+                      <strong>A ausência no acervo não significa que o conteúdo seja falso.</strong> Ele pode ter vindo de stories, lives ou canais não monitorados.
+                    </div>
+                  </div>
+                </sc-if>
+              </div>
+
+              <div style="border-top:1px solid #E3E7E9;padding-top:14px;display:flex;gap:10px 24px;flex-wrap:wrap;font-size:13px;font-weight:500">
+                <a href="#" style="display:flex;align-items:center;gap:6px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"></path></svg>Acessar API pública</a>
+                <a href="#" style="display:flex;align-items:center;gap:6px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7.5v.5"></path></svg>Como verificar um registro de forma independente</a>
+              </div>
+            </div>
+            </sc-if>
+
+            <sc-if value="{{ tabMandato }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:20px 22px;display:flex;flex-direction:column;gap:18px">
+              <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;align-items:baseline">
+                <div style="font-size:13px;font-weight:700;color:#2F6B6E;text-transform:uppercase;letter-spacing:.5px">Mandato 2027–2031 · simulação</div>
+                <span style="font-size:12px;color:#666">Promessas registradas na campanha, acompanhadas por organizações parceiras</span>
+              </div>
+              <div style="background:#F1F3F4;border:1px solid #D3D9DC;border-radius:4px;padding:14px 16px;font-size:14px;line-height:1.5;color:#333;display:flex;gap:12px;align-items:flex-start">
+                <span style="flex:none;width:24px;height:24px;border-radius:50%;background:#5F6A70;color:#fff;font-weight:700;font-size:13px;font-family:Georgia,serif;display:flex;align-items:center;justify-content:center">i</span>
+                <span><strong>A plataforma não dá o veredito.</strong> O status de cada compromisso é atribuído pela organização parceira indicada no item. O registro da fala original permanece assinado e inalterado.</span>
+              </div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <sc-for list="{{ statusSummary }}" as="ss" hint-placeholder-count="4">
+                  <div style="flex:1 1 120px;border:1px solid #DDE2E5;border-radius:4px;padding:10px 12px;display:flex;align-items:center;gap:10px">
+                    <span style="width:10px;height:10px;border-radius:50%;background:{{ ss.dot }};border:1.5px solid {{ ss.ring }}"></span>
+                    <span style="font-size:20px;font-weight:700;color:#1F3F40">{{ ss.n }}</span>
+                    <span style="font-size:12px;color:#555">{{ ss.label }}</span>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <sc-for list="{{ commitments }}" as="c" hint-placeholder-count="4">
+                  <div style="border:1px solid #DDE2E5;border-radius:4px;background:#fff;display:flex;flex-wrap:wrap">
+                    <div style="flex:2 1 300px;min-width:0;padding:14px;display:flex;flex-direction:column;gap:8px">
+                      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#2F6B6E">Registro da campanha · {{ c.theme }}</div>
+                      <div style="font-size:14px;color:#3A4447;line-height:1.45;font-style:italic">{{ c.text }}</div>
+                      <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:#555">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2F6B6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="{{ c.icon }}"></path></svg>
+                        <span>{{ c.source }}</span>
+                      </div>
+                      <a href="#" onClick="{{ c.open }}" style="align-self:flex-start;font-size:12px;font-weight:500">Ver no original</a>
+                    </div>
+                    <div style="flex:1 1 220px;min-width:0;padding:14px;background:#F7F8F9;border-left:1px dashed #C9D1D5;display:flex;flex-direction:column;gap:8px">
+                      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#5F6A70">Avaliação externa</div>
+                      <span style="align-self:flex-start;display:flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:#2E3538;border:1px solid #C9D1D5;background:#fff;border-radius:12px;padding:3px 10px"><span style="width:8px;height:8px;border-radius:50%;background:{{ c.dot }};border:1.5px solid {{ c.ring }}"></span>{{ c.status }}</span>
+                      <div style="font-size:12px;color:#555;line-height:1.45">{{ c.evaluator }}</div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+            </sc-if>
+          </div>
+        </sc-if>
+      </div>
+
+      <sc-for list="{{ blocksAfter }}" as="b" hint-placeholder-count="4">
+        <div style="background:#E8ECEE;border:1px solid #DCE1E4;border-radius:4px;padding:13px 18px;display:flex;align-items:center;gap:12px;cursor:pointer" style-hover="background:#E1E6E9">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F6B6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="{{ b.icon }}"></path></svg>
+          <span style="flex:1;color:#2F6B6E;font-weight:500;font-size:15px">{{ b.title }}</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2F6B6E" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
+        </div>
+      </sc-for>
+    </section>
+  </div>
+</main>
+</div>
+</div>
+
+<sc-if value="{{ hasModal }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeModal }}" style="position:fixed;inset:0;z-index:50;background:rgba(20,32,34,.55);display:flex;align-items:flex-start;justify-content:center;padding:36px 12px;overflow-y:auto">
+    <div onClick="{{ stop }}" style="background:#fff;border-radius:6px;box-shadow:0 10px 40px rgba(0,0,0,.25);width:100%;max-width:960px">
+      <div style="background:#2F6B6E;color:#fff;padding:14px 20px;border-radius:6px 6px 0 0;display:flex;align-items:center;gap:12px">
+        <span style="flex:1;font-size:17px;font-weight:500">{{ m.modalTitle }}</span>
+        <button onClick="{{ closeModal }}" style="background:none;border:0;color:#fff;font-size:22px;line-height:1;cursor:pointer">×</button>
+      </div>
+      <div style="padding:20px;display:flex;flex-direction:column;gap:18px">
+        <div style="font-size:13px;color:#555">{{ m.origin }} · {{ m.date }}, {{ m.time }}</div>
+
+        <sc-if value="{{ m.hasPlayer }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-wrap:wrap;gap:16px">
+            <div style="flex:3 1 380px;min-width:0;display:flex;flex-direction:column;gap:0">
+              <div style="aspect-ratio:16/9;background:#1E2628;border-radius:4px 4px 0 0;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden">
+                <div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,#232C2F 0 14px,#1E2628 14px 28px)"></div>
+                <span style="position:relative;font-family:'Roboto Mono',monospace;font-size:12px;color:#8C999D">{{ m.playerLabel }}</span>
+                <span style="position:absolute;top:10px;left:10px;font-size:11px;color:#fff;background:rgba(0,0,0,.5);border-radius:3px;padding:2px 7px">{{ m.origin }}</span>
+                <span style="position:absolute;bottom:12px;left:12px;right:12px;font-size:14px;color:#fff;background:rgba(0,0,0,.6);border-radius:3px;padding:6px 10px;text-align:center">{{ caption }}</span>
+              </div>
+              <div style="background:#2A3336;border-radius:0 0 4px 4px;padding:8px 12px;display:flex;align-items:center;gap:12px">
+                <button onClick="{{ togglePlay }}" style="flex:none;width:30px;height:30px;border:0;border-radius:50%;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#2A3336"><path d="{{ playIcon }}"></path></svg>
+                </button>
+                <div onClick="{{ seekBar }}" style="flex:1;height:6px;background:#4A5559;border-radius:3px;position:relative;cursor:pointer">
+                  <div style="position:absolute;left:{{ markStart }};width:{{ markWidth }};top:-2px;bottom:-2px;background:#E6C56B;border-radius:2px"></div>
+                  <div style="position:absolute;left:0;top:0;bottom:0;width:{{ progress }};background:#CFE0E0;border-radius:3px"></div>
+                </div>
+                <span style="flex:none;font-family:'Roboto Mono',monospace;font-size:12px;color:#fff">{{ timeLabel }} / 01:30</span>
+              </div>
+              <div style="font-size:11px;color:#666;margin-top:6px;display:flex;align-items:center;gap:6px"><span style="width:14px;height:6px;background:#E6C56B;border-radius:2px"></span>Trecho indexado como promessa</div>
+            </div>
+            <div style="flex:2 1 260px;min-width:0;border:1px solid #DDE2E5;border-radius:4px;display:flex;flex-direction:column">
+              <div style="padding:10px 14px;border-bottom:1px solid #DDE2E5;font-size:13px;font-weight:700;color:#2F6B6E;display:flex;justify-content:space-between"><span>Transcrição</span><span style="font-weight:400;color:#777;font-size:12px">rolagem sincronizada</span></div>
+              <div ref="{{ transcriptRef }}" style="height:300px;overflow-y:auto;padding:6px 0;position:relative">
+                <sc-for list="{{ transcript }}" as="ln" hint-placeholder-count="8">
+                  <div onClick="{{ ln.seek }}" style="display:flex;gap:10px;padding:7px 14px;cursor:pointer;background:{{ ln.bg }};border-left:3px solid {{ ln.bar }}">
+                    <span style="flex:none;font-family:'Roboto Mono',monospace;font-size:11px;color:#6B757A;padding-top:2px">{{ ln.ts }}</span>
+                    <span style="font-size:13px;line-height:1.45;color:{{ ln.fg }};font-weight:{{ ln.fw }}">{{ ln.text }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ m.noPlayer }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;gap:16px;flex-wrap:wrap">
+            <div style="flex:none;width:140px;aspect-ratio:4/5;border-radius:3px;background:repeating-linear-gradient(135deg,#E9EDEF 0 8px,#E0E5E8 8px 16px);display:flex;align-items:center;justify-content:center;font-family:'Roboto Mono',monospace;font-size:11px;color:#7A858A">{{ m.kindLabel }}</div>
+            <div style="flex:1 1 260px;min-width:0;display:flex;flex-direction:column;gap:6px">
+              <div style="font-size:17px;color:#222;line-height:1.4">{{ m.text }}</div>
+              <div style="font-size:12px;color:#666;font-family:'Roboto Mono',monospace;word-break:break-all">{{ m.url }}</div>
+            </div>
+          </div>
+        </sc-if>
+
+        <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:stretch">
+          <div style="flex:3 1 380px;min-width:0;border:1px solid #BCD7D8;border-radius:4px">
+            <div style="background:#EAF3F3;padding:10px 14px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #BCD7D8">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2F6B6E" stroke-width="2"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z"></path></svg>
+              <span style="font-size:14px;font-weight:700;color:#2F6B6E">Registro (fato assinado)</span>
+            </div>
+            <div style="padding:14px;display:flex;flex-direction:column;gap:14px;font-size:13px">
+              <div>
+                <div style="font-weight:700;color:#333;margin-bottom:4px">CID (IPFS)</div>
+                <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+                  <code style="flex:1 1 260px;min-width:0;background:#F4F6F7;border:1px solid #DDE2E5;border-radius:3px;padding:7px 9px;font-family:'Roboto Mono',monospace;font-size:12px;word-break:break-all;color:#333">{{ m.cid }}</code>
+                  <button onClick="{{ copyCid }}" style="height:32px;padding:0 12px;border:1px solid #2F6B6E;background:#fff;color:#2F6B6E;border-radius:4px;font:inherit;font-size:12px;font-weight:500;cursor:pointer">{{ copyLabel }}</button>
+                </div>
+                <a href="#" style="display:inline-block;margin-top:6px;font-size:12px;font-weight:500">Abrir no gateway IPFS ↗</a>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px">
+                <div>
+                  <div style="font-weight:700;color:#333;margin-bottom:4px">Assinatura do coletor</div>
+                  <div style="color:#444;line-height:1.5">coletor-01 (ilustrativo) · Ed25519<br><span style="font-family:'Roboto Mono',monospace;font-size:12px;color:#555">7F3A 91C2 0B4D E6A8 · válida ✓</span></div>
+                </div>
+                <div>
+                  <div style="font-weight:700;color:#333;margin-bottom:4px">Carimbo do tempo</div>
+                  <div style="color:#444;line-height:1.5">{{ m.stamp }}<br><span style="font-size:12px;color:#555">RFC 3161 · autoridade ilustrativa</span></div>
+                </div>
+              </div>
+              <div>
+                <div style="font-weight:700;color:#333;margin-bottom:4px">Histórico de versões</div>
+                <sc-for list="{{ m.versions }}" as="v" hint-placeholder-count="1">
+                  <div style="display:flex;gap:10px;align-items:flex-start;padding:4px 0">
+                    <span style="flex:none;margin-top:4px;width:9px;height:9px;border-radius:50%;background:#2F6B6E"></span>
+                    <div style="flex:1;min-width:0"><strong style="color:#333">{{ v.label }}</strong> <span style="color:#555">· {{ v.when }}</span></div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+          <div style="flex:2 1 260px;min-width:0;border:1px dashed #BFC7CB;border-radius:4px;background:#F7F8F9">
+            <div style="padding:10px 14px;border-bottom:1px dashed #BFC7CB">
+              <div style="font-size:14px;font-weight:700;color:#5F6A70">Indexação</div>
+              <div style="font-size:12px;color:#6B757A">gerada por IA com revisão humana</div>
+            </div>
+            <div style="padding:14px;display:flex;flex-direction:column;gap:10px;font-size:13px;color:#4A5458">
+              <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span style="font-weight:500">Tema:</span>
+                <sc-for list="{{ m.cats }}" as="c" hint-placeholder-count="1"><span style="background:#E8ECEE;border-radius:10px;padding:2px 9px;font-size:12px">{{ c }}</span></sc-for>
+              </div>
+              <div><span style="font-weight:500">Trecho marcado:</span> {{ m.mark }}</div>
+              <div><span style="font-weight:500">Revisão:</span> equipe de curadoria (ilustrativo), 06/09/2026</div>
+              <div style="font-size:11px;color:#6B757A;border-top:1px solid #E3E7E9;padding-top:8px;line-height:1.45">A indexação organiza o acervo para busca. Pode conter imprecisões, não é assinada e não integra o registro.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+<div style="position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:60;background:#1E2426;border-radius:10px;padding:6px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center;box-shadow:0 6px 24px rgba(0,0,0,.3);max-width:calc(100vw - 24px)">
+  <sc-for list="{{ screens }}" as="sc" hint-placeholder-count="8">
+    <button onClick="{{ sc.go }}" style="border:0;border-radius:6px;padding:7px 11px;font:inherit;font-size:12px;cursor:pointer;background:{{ sc.bg }};color:{{ sc.fg }}">{{ sc.label }}</button>
+  </sc-for>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;initialScreen&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4a&quot;,&quot;4b&quot;,&quot;4c&quot;,&quot;5&quot;,&quot;6&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+const IC = {
+  users: 'M16 20v-2a4 4 0 00-8 0v2M12 11a3 3 0 100-6 3 3 0 000 6z',
+  vote: 'M4 11h16v9H4zM9 11V4h6v7M10 7h4',
+  house: 'M3 11l9-7 9 7v9H3zM9 20v-6h6v6',
+  doc: 'M6 3h9l4 4v14H6zM15 3v4h4M9 12h7M9 16h7',
+  cert: 'M5 4h14v12H5zM9 20l3-3 3 3M9 9h6',
+  scale: 'M12 4v16M5 20h14M4 9l3-5 3 5a3 3 0 01-6 0zM14 9l3-5 3 5a3 3 0 01-6 0z',
+  globe: 'M12 3a9 9 0 100 18 9 9 0 000-18zM3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18',
+  lock: 'M6 11h12v9H6zM9 11V8a3 3 0 016 0v3',
+  tv: 'M3 7h18v12H3zM8 3l4 4 4-4',
+  radio: 'M4 9h16v11H4zM5 9l11-5M9 14.5a1.5 1.5 0 100 .01M14 13h3M14 16h3',
+  debate: 'M3 5h11v8H7l-4 3zM17 9h4v8l-3-2h-4v-2',
+  ig: 'M7 3h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7a4 4 0 014-4zM12 8a4 4 0 100 8 4 4 0 000-8z',
+  x: 'M4 4l16 16M20 4L4 20'
+};
+const BADGE = {
+  'Orgânico': ['#CFD6DA', '#fff', '#555'],
+  'Impulsionado': ['#9FC1C2', '#EEF5F5', '#2F6B6E'],
+  'Horário eleitoral': ['#A9BCD1', '#EFF3F8', '#34557A'],
+  'Rádio': ['#A9BCD1', '#EFF3F8', '#34557A'],
+  'Debate': ['#B9B3CF', '#F3F1F8', '#4E4777'],
+  'Editado após captura': ['#D8CFAF', '#F8F5EA', '#6E6650']
+};
+const TL = [
+  { id: 't1', date: '22/09/2026', time: '10:15', media: 'Redes', icon: IC.ig, origin: 'Instagram oficial', kind: 'imagem', text: 'Agenda de campanha em Recife nesta sexta', badges: ['Orgânico'], theme: 'Agenda' },
+  { id: 't2', date: '20/09/2026', time: '17:30', media: 'Rádio', icon: IC.radio, origin: 'Horário eleitoral · Rádio', kind: 'áudio', text: '[Transcrição ilustrativa — inserção no rádio sobre saúde]', badges: ['Horário eleitoral', 'Rádio'], theme: 'Saúde', player: true },
+  { id: 't3', date: '18/09/2026', time: '22:10', media: 'Debates', icon: IC.debate, origin: 'Debate · TV local', kind: 'vídeo', text: '[Trecho ilustrativo — resposta em debate sobre segurança]', badges: ['Debate'], theme: 'Segurança', player: true },
+  { id: 't4', date: '17/09/2026', time: '09:40', media: 'Redes', icon: IC.ig, origin: 'Instagram oficial', kind: 'vídeo', text: 'Encontro com moradores no bairro da Várzea no domingo', badges: ['Impulsionado'], boosted: true, theme: 'Agenda' },
+  { id: 't5', date: '12/09/2026', time: '18:27', media: 'Redes', icon: IC.x, origin: 'X oficial', kind: 'texto', text: 'Entrevista à rádio local às 19h', badges: ['Orgânico', 'Editado após captura'], edited: true, theme: 'Agenda' },
+  { id: 't6', date: '05/09/2026', time: '13:00', media: 'TV', icon: IC.tv, origin: 'Horário eleitoral · TV', kind: 'vídeo', text: '[Trecho ilustrativo — promessa sobre transporte público]', badges: ['Horário eleitoral'], theme: 'Transporte', player: true },
+  { id: 't7', date: '03/09/2026', time: '18:40', media: 'Redes', icon: IC.ig, origin: 'Instagram oficial', kind: 'imagem', text: 'Convite para plenária aberta sobre transporte público', badges: ['Orgânico'], theme: 'Transporte' },
+  { id: 't8', date: '01/09/2026', time: '12:05', media: 'Redes', icon: IC.ig, origin: 'Instagram oficial', kind: 'imagem', text: 'Caminhada no centro de Olinda neste sábado, às 9h', badges: ['Impulsionado', 'Editado após captura'], boosted: true, edited: true, theme: 'Agenda' }
+];
+const PR = [
+  { id: 'p1', theme: 'Transporte', media: 'TV', icon: IC.tv, source: 'Horário eleitoral · TV · 05/09/2026 · 00:42', at: 42, plan: true, tl: 't6' },
+  { id: 'p2', theme: 'Transporte', media: 'Debates', icon: IC.debate, source: 'Debate · TV local · 18/09/2026 · 12:15', at: 42, plan: false, tl: 't3', n: 2 },
+  { id: 'p3', theme: 'Saúde', media: 'Rádio', icon: IC.radio, source: 'Horário eleitoral · Rádio · 20/09/2026 · 00:18', at: 42, plan: true, tl: 't2' },
+  { id: 'p4', theme: 'Saúde', media: 'Redes', icon: IC.x, source: 'Redes · X · 14/09/2026', plan: false, n: 2 },
+  { id: 'p5', theme: 'Educação', media: 'TV', icon: IC.tv, source: 'Horário eleitoral · TV · 10/09/2026 · 00:27', at: 42, plan: true },
+  { id: 'p6', theme: 'Segurança', media: 'Debates', icon: IC.debate, source: 'Debate · TV local · 18/09/2026 · 31:04', at: 42, plan: false, tl: 't3' },
+  { id: 'p7', theme: 'Economia', media: 'Rádio', icon: IC.radio, source: 'Horário eleitoral · Rádio · 11/09/2026 · 00:35', at: 42, plan: true },
+  { id: 'p8', theme: 'Meio ambiente', media: 'Redes', icon: IC.ig, source: 'Redes · Instagram · 09/09/2026', plan: true }
+].map(p => ({ ...p, text: '[Trecho ilustrativo — promessa sobre ' + ({ 'Transporte': 'transporte público', 'Saúde': 'saúde', 'Educação': 'educação', 'Segurança': 'segurança', 'Economia': 'economia', 'Meio ambiente': 'meio ambiente' })[p.theme] + (p.n ? ', ' + p.n : '') + ']' }));
+const TR = [[0, 'abertura'], [8, 'apresentação'], [16, 'contexto'], [24, 'contexto'], [33, 'transição']];
+const THEMES = ['Saúde', 'Educação', 'Transporte', 'Segurança', 'Economia', 'Meio ambiente'];
+
+class Component extends DCLogic {
+  state = { open: false, tab: 'acervo', media: 'Todas', theme: null, search: '', result: null, pending: null, query: '', modal: null, mobile: false, screen: '1', copied: false, t: 42, playing: false };
+  frameRef = React.createRef(); blockRef = React.createRef(); verifierRef = React.createRef(); transcriptRef = React.createRef();
+
+  componentDidMount() { const s = this.props.initialScreen; if (s && s !== '1') this.go(s); }
+  componentWillUnmount() { clearInterval(this.timer); }
+  componentDidUpdate(pp, ps) {
+    if (this.state.modal && (ps.t !== this.state.t || ps.modal !== this.state.modal)) this.syncTranscript();
+  }
+  syncTranscript() {
+    const box = this.transcriptRef.current; if (!box) return;
+    const el = box.querySelector('[data-active="1"]') || box.children[this.activeIdx()];
+    if (el) box.scrollTop = el.offsetTop - box.clientHeight / 2 + el.clientHeight / 2;
+  }
+  lines(m) {
+    const mark = m.text.startsWith('[') ? m.text : '[Trecho ilustrativo — fala]';
+    return [...TR.map(([s, w]) => [s, '[Transcrição ilustrativa — ' + w + ']']), [42, mark, true], [52, '[Transcrição ilustrativa — continuação]'], [61, '[Transcrição ilustrativa — continuação]'], [70, '[Transcrição ilustrativa — encerramento]'], [80, '[Transcrição ilustrativa — assinatura da peça]']];
+  }
+  activeIdx() { const t = this.state.t; const L = this.lines({ text: '' }); let i = 0; L.forEach(([s], k) => { if (t >= s) i = k; }); return i; }
+
+  openItem(tlId, promise) {
+    clearInterval(this.timer);
+    this.setState({ modal: { tl: tlId, promise }, t: 42, playing: false, copied: false });
+  }
+  togglePlay() {
+    if (this.state.playing) { clearInterval(this.timer); return this.setState({ playing: false }); }
+    this.setState({ playing: true });
+    this.timer = setInterval(() => this.setState(s => s.t >= 90 ? (clearInterval(this.timer), { playing: false }) : { t: s.t + 1 }), 1000);
+  }
+
+  go(id) {
+    clearInterval(this.timer);
+    const base = { open: true, tab: 'acervo', result: null, modal: null, mobile: false, playing: false, t: 42 };
+    const map = {
+      '1': { ...base, open: false },
+      '2': base,
+      '3': { ...base, modal: { tl: 't6', promise: 'p1' } },
+      '4a': { ...base, result: 'exact', query: 'https://instagram.com/p/ilustrativo-0309' },
+      '4b': { ...base, result: 'approx', query: 'print-plenaria.png' },
+      '4c': { ...base, result: 'none', query: 'https://exemplo.com/audio-compartilhado' },
+      '5': { ...base, tab: 'mandato' },
+      '6': { ...base, mobile: true }
+    };
+    this.setState({ ...map[id], screen: id, copied: false }, () => setTimeout(() => {
+      if (id === '1') return this.scrollTo(null);
+      if (id.startsWith('4')) return this.scrollTo(this.verifierRef.current);
+      if (id !== '3') this.scrollTo(this.blockRef.current);
+    }, 60));
+  }
+  scrollTo(el) {
+    const f = this.frameRef.current;
+    if (this.state.mobile && f) f.scrollTop = el ? el.getBoundingClientRect().top - f.getBoundingClientRect().top + f.scrollTop - 40 : 0;
+    else window.scrollTo({ top: el ? el.getBoundingClientRect().top + window.scrollY - 44 : 0, behavior: 'smooth' });
+  }
+
+  renderVals() {
+    const s = this.state, mob = s.mobile;
+    const q = s.search.trim().toLowerCase();
+    const mediaOk = x => s.media === 'Todas' || x.media === s.media;
+    const pf = PR.filter(p => mediaOk(p) && (!s.theme || p.theme === s.theme) && (!q || (p.text + p.source).toLowerCase().includes(q)));
+    const groups = THEMES.map(th => ({ theme: th, list: pf.filter(p => p.theme === th) })).filter(g => g.list.length).map(g => ({
+      theme: g.theme, count: g.list.length + (g.list.length === 1 ? ' promessa' : ' promessas'),
+      items: g.list.map(p => ({ ...p, plan: p.plan ? 'Consta no plano de governo' : 'Não consta no plano de governo',
+        planBd: p.plan ? '#9FC1C2' : '#CFD6DA', planBg: p.plan ? '#EEF5F5' : '#F4F6F7', planFg: p.plan ? '#2F6B6E' : '#555',
+        open: () => this.openItem(p.tl || 't6', p.id) }))
+    }));
+    const tf = TL.filter(x => mediaOk(x) && (!s.theme || x.theme === s.theme) && (!q || x.text.toLowerCase().includes(q)));
+    const items = tf.map(x => ({ ...x,
+      fstyle: x.text.startsWith('[') ? 'italic' : 'normal',
+      thumbBg: x.player ? '#2A3336' : 'repeating-linear-gradient(135deg,#E9EDEF 0 8px,#E0E5E8 8px 16px)', thumbFg: x.player ? '#CFD8DA' : '#6B757A',
+      badges: x.badges.map(l => ({ label: l, bd: BADGE[l][0], bg: BADGE[l][1], fg: BADGE[l][2] })),
+      open: e => { e && e.preventDefault(); this.openItem(x.id, null); } }));
+
+    let m = null;
+    if (s.modal) {
+      const x = TL.find(t => t.id === s.modal.tl), p = PR.find(pp => pp.id === s.modal.promise);
+      const txt = p ? p.text : x.text;
+      const cid = 'bafybei' + (x.id + (p ? p.id : '') + 'gdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi').replace(/[^a-z0-9]/g, '').slice(0, 52);
+      const versions = [{ label: 'Publicado', when: x.date + ', ' + x.time }];
+      if (x.edited) versions.push({ label: 'Editado', when: (+x.date.slice(0, 2) + 1).toString().padStart(2, '0') + x.date.slice(2) + ', 08:12' });
+      m = { ...x, text: txt, cid, versions, modalTitle: p ? 'Promessa no original' : 'Registro do item',
+        hasPlayer: !!x.player, noPlayer: !x.player, playerLabel: x.media === 'Rádio' ? 'áudio · forma de onda ilustrativa' : 'vídeo ilustrativo',
+        kindLabel: x.kind + ' capturado', url: (x.icon === IC.x ? 'x.com/status/' : 'instagram.com/p/') + 'ilustrativo-' + x.date.slice(0, 5).replace('/', ''),
+        stamp: x.date + ' ' + x.time + ':17 (UTC−3)', cats: [p ? p.theme : x.theme],
+        mark: x.player ? '00:42 – 00:51 · classificado como promessa' : 'item integral · sem promessa identificada' };
+      this._m = m;
+    }
+    const L = m ? this.lines(m) : [], ai = this.activeIdx();
+    const fmt = n => '00:' + String(Math.floor(n / 60)).padStart(2, '0').replace(/^0/, '0') + '';
+    const mmss = n => String(Math.floor(n / 60)).padStart(2, '0') + ':' + String(n % 60).padStart(2, '0');
+
+    const status = {
+      'Em andamento': ['#A9C7C8', '#2F6B6E'], 'Cumprido': ['#2F6B6E', '#2F6B6E'],
+      'Não cumprido': ['#fff', '#5F6A70'], 'Sem avaliação': ['#E3E7E9', '#B5BEC2']
+    };
+    const commitments = [
+      ['p1', 'Em andamento', '15/03/2028'], ['p3', 'Cumprido', '02/02/2028'], ['p5', 'Não cumprido', '10/01/2028'], ['p7', 'Sem avaliação', null]
+    ].map(([pid, st, when]) => { const p = PR.find(x => x.id === pid); return { ...p, status: st, dot: status[st][0], ring: status[st][1],
+      evaluator: when ? 'Avaliação: [organização parceira], atualizada em ' + when : 'Nenhuma organização parceira avaliou este compromisso até o momento.',
+      open: e => { e.preventDefault(); this.openItem(p.tl || 't6', p.id); } }; });
+
+    const screens = [['1', '1 · Fechado'], ['2', '2 · Aberto'], ['3', '3 · Promessa'], ['4a', '4a · Idêntico'], ['4b', '4b · Semelhante'], ['4c', '4c · Não encontrado'], ['5', '5 · Mandato'], ['6', '6 · Mobile']];
+    return {
+      frameRef: this.frameRef, blockRef: this.blockRef, verifierRef: this.verifierRef, transcriptRef: this.transcriptRef,
+      outerPad: mob ? '28px 12px' : '0', frameMaxW: mob ? '414px' : 'none', frameH: mob ? '860px' : 'auto', frameOverflow: mob ? 'auto' : 'visible',
+      frameBorder: mob ? '12px solid #1E2426' : '0', frameRadius: mob ? '40px' : '0', frameShadow: mob ? '0 20px 50px rgba(0,0,0,.25)' : 'none',
+      leftMax: mob ? 'none' : '320px',
+      statusBoxes: [{ title: 'Consta da urna', sub: 'Situação Candidato' }, { title: 'Deferido', sub: 'Situação Candidatura' }, { title: 'Deferido', sub: 'Situação Partido/Federação/Coligação' }],
+      fields: [
+        ['Nome Completo', 'JONES MANOEL DA SILVA'], ['CPF', '***.100.294-**'], ['Data de Nascimento', '09/01/1990'], ['Gênero', 'Masculino'],
+        ['Identidade de gênero', 'Não divulgado', 1], ['Orientação sexual', 'Não divulgado', 1], ['Cor / Raça', 'Preta'], ['Etnia Indígena', 'Não Informada'],
+        ['Quilombola', 'Não'], ['Estado Civil', 'Solteiro(a)'], ['Grau de Instrução', 'Superior Completo'], ['Ocupação', 'Escritor e Crítico'],
+        ['Nacionalidade / Naturalidade', 'Brasileira Nata / PE-Recife', 0, 1], ['Federação', 'FEDERAÇÃO PSOL REDE(50-PSOL/18-REDE)', 0, 1], ['Composição da Coligação', 'Não se aplica', 0, 1]
+      ].map(([label, value, help, full]) => ({ label, value, help: !!help, span: full ? '1 / -1' : 'auto' })),
+      blocksBefore: [['Vices/Suplentes', IC.users], ['Eleições', IC.vote], ['Bens do Candidato', IC.house], ['Propostas', IC.doc]].map(([title, icon]) => ({ title, icon })),
+      blocksAfter: [['Certidão', IC.cert], ['Processos', IC.scale], ['Sites do Candidato', IC.globe], ['Encarregado de dados', IC.lock]].map(([title, icon]) => ({ title, icon })),
+      open: s.open, chevronRot: s.open ? 'rotate(180deg)' : 'none', toggleOpen: () => this.setState({ open: !s.open }),
+      tabs: [['acervo', 'Acervo da campanha', false], ['mandato', 'Compromissos do mandato', true]].map(([id, label, future]) => ({ label, future,
+        line: s.tab === id ? '#2F6B6E' : 'transparent', fg: s.tab === id ? '#2F6B6E' : '#666', go: () => this.setState({ tab: id }) })),
+      tabAcervo: s.tab === 'acervo', tabMandato: s.tab === 'mandato',
+      stats: [[86, 'itens nas redes'], [14, 'no horário eleitoral de TV'], [6, 'no rádio'], [2, 'debates'], [31, 'promessas identificadas'], [12, 'impulsionamentos'], [2, 'editados após a captura']].map(([n, label]) => ({ n, label })),
+      search: s.search, onSearch: e => this.setState({ search: e.target.value }),
+      mediaOpts: ['Todas', 'Redes', 'TV', 'Rádio', 'Debates'].map(l => { const on = s.media === l; return { label: l, bg: on ? '#2F6B6E' : '#fff', fg: on ? '#fff' : '#2F6B6E', bd: on ? '#2F6B6E' : '#C5CDD1', go: () => this.setState({ media: l }) }; }),
+      themeChips: THEMES.map(l => { const on = s.theme === l; return { label: l, bg: on ? '#EEF5F5' : '#fff', fg: on ? '#1F4C4E' : '#444', bd: on ? '#2F6B6E' : '#CFD6DA', go: () => this.setState({ theme: on ? null : l }) }; }),
+      groups, noPromises: !groups.length, promiseCount: 'Mostrando ' + pf.length + ' de 31 promessas',
+      items, timelineCount: 'Mostrando ' + tf.length + ' de 108 itens',
+      query: s.query, onQuery: e => this.setState({ query: e.target.value }),
+      verify: () => this.setState({ result: s.pending || 'exact' }),
+      uploadDemo: () => this.setState({ query: 'print-plenaria.png', pending: 'approx', result: 'approx' }),
+      examples: [['Idêntico', 'https://instagram.com/p/ilustrativo-0309', 'exact'], ['Semelhante', 'print-plenaria.png', 'approx'], ['Não encontrado', 'https://exemplo.com/audio-compartilhado', 'none']]
+        .map(([label, qq, r]) => ({ label, pick: () => this.setState({ query: qq, pending: r, result: null }) })),
+      isExact: s.result === 'exact', isApprox: s.result === 'approx', isNone: s.result === 'none',
+      openPost0309: e => { e.preventDefault(); this.openItem('t7', null); },
+      statusSummary: [['Em andamento', 9], ['Cumprido', 4], ['Não cumprido', 3], ['Sem avaliação', 15]].map(([label, n]) => ({ label, n, dot: status[label][0], ring: status[label][1] })),
+      commitments,
+      hasModal: !!m, m: m || { versions: [], cats: [] },
+      transcript: L.map(([st, text, hl], k) => ({ ts: mmss(st), text, bg: k === ai ? '#EEF5F5' : 'transparent', bar: hl ? '#E6C56B' : (k === ai ? '#2F6B6E' : 'transparent'),
+        fg: k === ai ? '#1F3F40' : '#555', fw: hl ? 700 : 400, seek: () => this.setState({ t: st }) })),
+      caption: L[ai] ? L[ai][1] : '', timeLabel: mmss(s.t), progress: (s.t / 90 * 100) + '%', markStart: (42 / 90 * 100) + '%', markWidth: (10 / 90 * 100) + '%',
+      playIcon: s.playing ? 'M6 4h4v16H6zM14 4h4v16h-4z' : 'M7 4l13 8-13 8z', togglePlay: () => this.togglePlay(),
+      seekBar: e => { const r = e.currentTarget.getBoundingClientRect(); this.setState({ t: Math.max(0, Math.min(90, Math.round((e.clientX - r.left) / r.width * 90))) }); },
+      closeModal: () => { clearInterval(this.timer); this.setState({ modal: null, playing: false }); }, stop: e => e.stopPropagation(),
+      copyCid: () => { try { navigator.clipboard.writeText(this._m.cid); } catch (e) {} this.setState({ copied: true }); },
+      copyLabel: s.copied ? 'Copiado ✓' : 'Copiar',
+      screens: screens.map(([id, label]) => ({ label, go: () => this.go(id), bg: s.screen === id ? '#fff' : 'transparent', fg: s.screen === id ? '#1E2426' : '#C9D2D5' }))
+    };
+  }
+}
+
+</script>
+</body>
+</html>

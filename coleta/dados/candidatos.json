@@ -1,0 +1,208 @@
+{
+ "collectedAt": "25/09/2026",
+ "tool": "1.8.8",
+ "cands": {
+  "jones": {
+   "short": "Jones Manoel",
+   "name": "JONES MANOEL",
+   "num": "5050",
+   "uf": "PE",
+   "ufName": "Pernambuco",
+   "cargo": "Deputado Federal - Pernambuco/PE",
+   "party": "Partido Socialismo E Liberdade - PSOL · Federação PSOL REDE (50-PSOL/18-REDE)",
+   "situacao": "Deferido",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Jones_Manoel.jpg",
+   "photoPage": "https://commons.wikimedia.org/wiki/File:Jones_Manoel.jpg",
+   "tseNote": "Fonte: TSE · DivulgaCandContas, atualizado em 25/09/2026",
+   "divulga": "https://divulgacandcontas.tse.jus.br/divulga/#/home",
+   "tse": [
+    [
+     "Nome completo",
+     "Jones Manoel da Silva"
+    ],
+    [
+     "Nascimento",
+     "09/01/1990"
+    ],
+    [
+     "Naturalidade",
+     "PE-Recife"
+    ],
+    [
+     "Ocupação",
+     "Escritor e Crítico"
+    ],
+    [
+     "Grau de instrução",
+     "Superior completo"
+    ],
+    [
+     "Situação",
+     "Deferido"
+    ],
+    [
+     "Limite de gastos 1º turno",
+     "R$ 3.176.572,53"
+    ]
+   ],
+   "collectNote": "TikTok, Facebook, canal de WhatsApp, site e Spotify foram declarados, mas ficaram fora desta coleta.",
+   "channels": [
+    {
+     "label": "Instagram · @jones.manoel",
+     "url": "https://www.instagram.com/jones.manoel/",
+     "ok": true,
+     "status": "coletado"
+    },
+    {
+     "label": "X · @jonesmanoel_PE",
+     "url": "https://x.com/jonesmanoel_PE",
+     "ok": true,
+     "status": "coletado"
+    },
+    {
+     "label": "TikTok · @jonesmanoel",
+     "url": "https://www.tiktok.com/@jonesmanoel",
+     "ok": false,
+     "status": "não coletado · o opencli falhou ao ler o TikTok"
+    },
+    {
+     "label": "Facebook · Jones Manoel",
+     "url": "https://www.facebook.com/p/Jones-Manoel-61557664776892/",
+     "ok": false,
+     "status": "não coletado · o opencli não lê posts de páginas"
+    },
+    {
+     "label": "Canal de WhatsApp",
+     "url": "https://whatsapp.com/channel/0029VaGaLeV17En4ggzxCi2z",
+     "ok": false,
+     "status": "não coletado · sem adaptador no opencli"
+    },
+    {
+     "label": "Site · jonesmanoel2026.com.br",
+     "url": "https://www.jonesmanoel2026.com.br",
+     "ok": false,
+     "status": "não coletado · sites ficam para o MVP"
+    },
+    {
+     "label": "Spotify",
+     "url": "https://open.spotify.com/intl-pt/artist/2xB3hKbq2PtxHT2esLyva6",
+     "ok": false,
+     "status": "não coletado · áudio fica para o MVP"
+    }
+   ]
+  },
+  "nikolas": {
+   "short": "Nikolas Ferreira",
+   "name": "NIKOLAS FERREIRA",
+   "num": "2222",
+   "uf": "MG",
+   "ufName": "Minas Gerais",
+   "cargo": "Deputado Federal - Minas Gerais/MG",
+   "party": "Partido Liberal - PL",
+   "situacao": "Deferido",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Nikolas_Ferreira_in_2023_%28cropped%29.jpg",
+   "photoPage": "https://commons.wikimedia.org/wiki/File:Nikolas_Ferreira_in_2023_(cropped).jpg",
+   "tseNote": "Fonte: TSE · DivulgaCandContas, atualizado em 18/09/2026",
+   "divulga": "https://divulgacandcontas.tse.jus.br/divulga/#/home",
+   "tse": [
+    [
+     "Nome completo",
+     "Nikolas Ferreira de Oliveira"
+    ],
+    [
+     "Nascimento",
+     "30/05/1996"
+    ],
+    [
+     "Naturalidade",
+     "MG-Belo Horizonte"
+    ],
+    [
+     "Ocupação",
+     "Deputado"
+    ],
+    [
+     "Grau de instrução",
+     "Superior completo"
+    ],
+    [
+     "Situação",
+     "Deferido"
+    ],
+    [
+     "Limite de gastos 1º turno",
+     "R$ 3.176.572,53"
+    ]
+   ],
+   "collectNote": "Vídeos do YouTube classificados pela legenda automática, que tem erros de transcrição. TikTok, Facebook, Kwai, Telegram e sites foram declarados, mas ficaram fora desta coleta.",
+   "channels": [
+    {
+     "label": "Instagram · @nikolasferreiradm",
+     "url": "https://www.instagram.com/nikolasferreiradm/",
+     "ok": true,
+     "status": "coletado"
+    },
+    {
+     "label": "Instagram · @nikolasferreirabr",
+     "url": "https://www.instagram.com/nikolasferreirabr/",
+     "ok": true,
+     "status": "coletado"
+    },
+    {
+     "label": "Instagram · @oquenikolasfez",
+     "url": "https://www.instagram.com/oquenikolasfez/",
+     "ok": true,
+     "status": "coletado"
+    },
+    {
+     "label": "X · @nikolas_dm",
+     "url": "https://x.com/nikolas_dm",
+     "ok": true,
+     "status": "coletado"
+    },
+    {
+     "label": "YouTube · @NikolasFerreiraO",
+     "url": "https://www.youtube.com/@NikolasFerreiraO",
+     "ok": true,
+     "status": "coletado · título, data, métricas e legenda automática"
+    },
+    {
+     "label": "YouTube · vídeo declarado",
+     "url": "https://www.youtube.com/watch?v=XHtcg9mqABM",
+     "ok": false,
+     "status": "não coletado · vídeo avulso"
+    },
+    {
+     "label": "TikTok · @nikolasferreiradm",
+     "url": "https://www.tiktok.com/@nikolasferreiradm",
+     "ok": false,
+     "status": "não coletado · o opencli falhou ao ler o TikTok"
+    },
+    {
+     "label": "Facebook · nikolasferreiradm",
+     "url": "https://www.facebook.com/nikolasferreiradm/",
+     "ok": false,
+     "status": "não coletado · o opencli não lê posts de páginas"
+    },
+    {
+     "label": "Kwai · @NikolasFerreiradm",
+     "url": "https://k.kwai.com/u/@NikolasFerreiradm/wBWnKCgC",
+     "ok": false,
+     "status": "não coletado · sem adaptador no opencli"
+    },
+    {
+     "label": "Telegram · t.me/nikolasferreira",
+     "url": "https://t.me/nikolasferreira",
+     "ok": false,
+     "status": "não coletado · sem adaptador no opencli"
+    },
+    {
+     "label": "Sites · nikolasferreira.com.br e outros 3",
+     "url": "https://nikolasferreira.com.br/candidatos",
+     "ok": false,
+     "status": "não coletado · sites ficam para o MVP"
+    }
+   ]
+  }
+ }
+}
